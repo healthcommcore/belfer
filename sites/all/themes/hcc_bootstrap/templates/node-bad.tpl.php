@@ -79,8 +79,32 @@
  *
  * @ingroup themeable
  */
+$all_categories = array(
+  'field_technologies_resources',
+  'field_capabilities',
+  'field_platforms',
+  'field_related_platforms_and_capa'
+);
+
+function node_has_props() {
+  global $all_categories;
+  $categories = array();
+  foreach($categories as $cat) {
+    if(property_exists($node, $cat) {
+      $categories[] = $cat;
+    }
+  }
+  return $categories;
+}
+
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
+<?php 
+  if(node_has_props()) {
+    echo "<h2>Success!</h2>";
+
+  <?php //dpm($node->field_related_platforms_and_capa['und'][0]['taxonomy_term']->name); ?>
+
 
   <?php print render($title_prefix); ?>
   <?php if (!$page): ?>
