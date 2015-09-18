@@ -73,22 +73,27 @@
  * @ingroup themeable
  */
 ?>
-<header id="navbar" role="banner" class="<?php print $navbar_classes; ?>">
+<header role="banner" class="white">
   <div class="container">
 		<div class="header-logo row">
       <?php if ($logo): ?>
-      <a class="logo navbar-btn col-md-9" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-        <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
-      </a>
+        <div class="col-xs-9">
+          <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
+            <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+          </a>
+        </div>
       <?php endif; ?>
-	
-		</div>
+      <?php if ( !empty($page['header-left']) ): ?>
+        <div class="col-xs-3">	
+          <div class="header-left">
+            <?php print render($page['header-left']); ?>
+          </div>
+        </div>
+      <?php endif; ?>
+    </div>
+  </div>
+</header>
     <div class="navbar-header">
-
-      <?php if (!empty($site_name)): ?>
-      <a class="name navbar-brand" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>"><?php print $site_name; ?></a>
-      <?php endif; ?>
-
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -99,8 +104,8 @@
     </div>
 
     <?php if (!empty($primary_nav) || !empty($secondary_nav) || !empty($page['navigation'])): ?>
-      <div class="navbar-collapse collapse">
-        <nav role="navigation">
+      <div class="navbar-collapse collapse navbar-color">
+        <nav role="navigation" class="container">
           <?php if (!empty($primary_nav)): ?>
             <?php print render($primary_nav); ?>
           <?php endif; ?>
@@ -114,17 +119,17 @@
       </div>
     <?php endif; ?>
   </div>
-</header>
 
-<div class="main-container container">
+<div class="main-container white">
+<div class="container">
 
-  <header role="banner" id="page-header">
+  <div role="banner" id="page-header">
     <?php if (!empty($site_slogan)): ?>
       <p class="lead"><?php print $site_slogan; ?></p>
     <?php endif; ?>
 
     <?php print render($page['header']); ?>
-  </header> <!-- /#page-header -->
+  </div> <!-- /#page-header -->
 
   <div class="row">
 
@@ -144,7 +149,7 @@
 				<?php if( !drupal_is_front_page()) : ?>
 					<div class="main-content-margin">
 						<?php if (!empty($title)): ?>
-							<h1 class="page-header"><?php print $title; ?></h1>
+							<h1><?php print $title; ?></h1>
 						<?php endif; ?>
 						<?php print render($title_suffix); ?>
 						<?php print $messages; ?>
@@ -157,7 +162,9 @@
 						<?php if (!empty($action_links)): ?>
 							<ul class="action-links"><?php print render($action_links); ?></ul>
 						<?php endif; ?>
-						<?php print render($page['content']); ?>
+            <div class="page-content">
+              <?php print render($page['content']); ?>
+            </div>
 					<?php endif; ?>
 					<?php if (!empty($page['news'])): ?>
 						<div class="panel panel-default homepage-news">
@@ -174,6 +181,7 @@
     <?php endif; ?>
 
   </div>
+</div>
 </div>
 <footer class="footer container">
 	<?php if (!empty($page['footer_logos']) || !empty($page['footer_legal'])): ?>

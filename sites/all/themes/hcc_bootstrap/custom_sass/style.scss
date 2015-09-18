@@ -1,4 +1,99 @@
+@import 'fonts.scss';
+
 /* Styles */
+
+/* variables */
+
+/* colors */
+$gray: #4D4D4D;
+$red: #AF0D3A;
+$white: #fff;
+$dk-navy: #152647;
+$lt-navy: #133872;
+$exlt-blue: #E8F2FC;
+$lt-blue: #CCE2F9;
+$med-blue: #7199C9;
+
+/* fonts */
+$sspro-reg: 'SourceSansProRegular';
+$sspro-lt: 'SourceSansProLight';
+$sspro-exlt: 'SourceSansProExtraLight';
+$sspro-blk: 'SourceSansProBlack';
+$neuton-lt: 'neutonlight';
+
+/* Mixins */
+
+@mixin menustyle {
+	float: left;
+	list-style: none;
+}
+
+/* global styles*/
+body {
+  background: $gray;
+  font-family: $sspro-lt;
+}
+
+.white {
+  background: $white;
+}
+
+/* header */
+header {
+  border-top: $red 10px solid;
+}
+
+.top-menu {
+  background: $red;
+  display: inline-block;
+  border-bottom-right-radius: 14px;
+  border-bottom-left-radius: 14px;
+  li {
+    @include menustyle;
+  }
+  a {
+    color: #fff;
+  }
+}
+
+/* nav */
+.navbar-color {
+  background: $dk-navy;
+}
+
+.navbar-nav > li > a {
+  color: #fff;
+  font-size: 20px;
+  font-family: $sspro-exlt;
+}
+
+.nav > li > a:hover,
+.nav > li > a.active,
+.nav > li.active-trail a.active-trail,
+.nav > li > a:focus {
+  background: $exlt-blue;
+  color: $lt-navy;
+}
+
+/* page content */
+.page-content {
+  font-size: 1.4em;
+}
+
+h1, h2 {
+  color: $red;
+}
+
+h1 {
+  font-family: $sspro-reg;
+  font-size: 3.0em;
+}
+
+h2 {
+  font-family: $sspro-lt;
+  font-size: 1.5em;
+  border-bottom: $red 1px solid;
+}
 
 /* Footer */
 
