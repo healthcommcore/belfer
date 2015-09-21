@@ -101,7 +101,8 @@
       hide($content['comments']);
       hide($content['links']);
       if($node->type == 'our_science_content') {
-        print render($content['body']);
+        //print render($content['body']);
+        print render($content);
       }
       else {
         print render($content);

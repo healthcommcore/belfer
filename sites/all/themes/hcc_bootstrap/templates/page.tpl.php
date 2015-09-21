@@ -120,6 +120,22 @@
     <?php endif; ?>
   </div>
 
+<?php if (!empty($page['home-hero']) || !empty($page['landing-hero']) ): ?>
+  <div class="container">
+    <?php if (!empty($page['home-hero'])): ?>
+      <div class="home-hero">
+        <?php print render($page['home-hero']); ?>
+      </div>
+    <?php endif; ?>
+      
+    <?php if (!empty($page['landing-hero'])): ?>
+      <div class="landing-hero">
+        <?php print render($page['landing-hero']); ?>
+      </div>
+    <?php endif; ?>
+  </div>
+<?php endif; ?>
+
 <div class="main-container white">
 <div class="container">
 
@@ -131,10 +147,15 @@
     <?php print render($page['header']); ?>
   </div> <!-- /#page-header -->
 
+  <?php if( !drupal_is_front_page()) : ?>
+    <?php if (!empty($title)): ?>
+      <h1><?php print $title; ?></h1>
+    <?php endif; ?>
+  <?php endif; ?>
   <div class="row">
 
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-sm-3" role="complementary">
+      <aside class="col-md-3" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
@@ -146,39 +167,34 @@
 				<?php if (!empty($breadcrumb)): print $breadcrumb; endif;?>
 				<a id="main-content"></a>
 				<?php print render($title_prefix); ?>
-				<?php if( !drupal_is_front_page()) : ?>
 					<div class="main-content-margin">
-						<?php if (!empty($title)): ?>
-							<h1><?php print $title; ?></h1>
-						<?php endif; ?>
-						<?php print render($title_suffix); ?>
-						<?php print $messages; ?>
-						<?php if (!empty($tabs)): ?>
-							<?php print render($tabs); ?>
-						<?php endif; ?>
-						<?php if (!empty($page['help'])): ?>
-							<?php print render($page['help']); ?>
-						<?php endif; ?>
-						<?php if (!empty($action_links)): ?>
-							<ul class="action-links"><?php print render($action_links); ?></ul>
-						<?php endif; ?>
-            <div class="page-content">
-              <?php print render($page['content']); ?>
-            </div>
-					<?php endif; ?>
+          <?php print render($title_suffix); ?>
+          <?php print $messages; ?>
+          <?php if (!empty($tabs)): ?>
+            <?php print render($tabs); ?>
+          <?php endif; ?>
+          <?php if (!empty($page['help'])): ?>
+            <?php print render($page['help']); ?>
+          <?php endif; ?>
+          <?php if (!empty($action_links)): ?>
+            <ul class="action-links"><?php print render($action_links); ?></ul>
+          <?php endif; ?>
+          <div class="page-content">
+            <?php print render($page['content']); ?>
+          </div>
 					<?php if (!empty($page['news'])): ?>
 						<div class="panel panel-default homepage-news">
 							<?php print render($page['news']); ?>
 						</div>
 					<?php endif; ?>
-				</div>
     </section>
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-sm-3" role="complementary">
+      <aside class="col-md-3" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
+				</div>
 
   </div>
 </div>

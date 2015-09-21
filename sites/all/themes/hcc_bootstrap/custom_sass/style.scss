@@ -7,8 +7,9 @@
 /* colors */
 $gray: #4D4D4D;
 $red: #AF0D3A;
+$md-red: #B00D3A;
 $white: #fff;
-$dk-navy: #152647;
+$dk-navy: #162748;
 $lt-navy: #133872;
 $exlt-blue: #E8F2FC;
 $lt-blue: #CCE2F9;
@@ -75,7 +76,50 @@ header {
   color: $lt-navy;
 }
 
+/* side nav */
+.submenu {
+  text-align: center;
+  border-top: $dk-navy 8px solid;
+  margin-top: 40px;
+  margin-left: 20px;
+  padding: 15px;
+  background: $lt-blue;
+  .nav > li a {
+    color: $lt-navy;
+    font-size: 1.5em;
+    border-bottom: $lt-navy 1px solid;
+  }
+  .nav > li:last-child a{
+    border-bottom: none;
+  }
+}
+
+/* homepage */
+.home-mission {
+  color: $md-red;
+  border-bottom: $red 1px solid;
+  margin-bottom: 20px;
+  h2 {
+    border: none;
+    font-size: 2.0em;
+    text-align: right;
+    color: #fff;
+    padding: 20px 30px 5px 0;
+    background: url('../images/homepage_header_decor.png') 0 0 no-repeat;
+  }
+  p {
+    padding: 15px 20px 30px 20px;
+    font-size: 2.0em;
+    font-family: $neuton-lt;
+    line-height: 1.5em;
+  }
+}
+
 /* page content */
+.main-content-margin {
+  margin: 40px 60px 40px 20px;
+}
+
 .page-content {
   font-size: 1.4em;
 }
