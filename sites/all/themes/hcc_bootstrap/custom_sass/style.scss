@@ -17,6 +17,7 @@ $med-blue: #7199C9;
 
 /* fonts */
 $sspro-reg: 'SourceSansProRegular';
+$sspro-bold: 'SourceSansProBold';
 $sspro-lt: 'SourceSansProLight';
 $sspro-exlt: 'SourceSansProExtraLight';
 $sspro-blk: 'SourceSansProBlack';
@@ -36,7 +37,8 @@ $neuton-reg: 'neutonregular';
   color: #fff;
 }
 
-@mixin landing-img {
+@mixin landing-img($name) {
+  background: url('../images/#{$name}.jpg') 0 0 no-repeat;
   background-size: cover;
   width: 100%;
   height: 282px;
@@ -162,6 +164,12 @@ header {
   margin: 40px 60px 40px 20px;
 }
 
+.gray-border {
+  border-right: #d7d7d7 1px solid;
+  border-left: #d7d7d7 1px solid;
+  border-top: #d7d7d7 1px solid;
+}
+
 .page-content {
   font-size: 1.4em;
 }
@@ -174,9 +182,26 @@ header {
   z-index: 0;
 }
 
+/* our science */
+.view-our-science {
+  .field-label {
+    font-size: 0.9em;
+    text-transform: uppercase;
+    font-family: $sspro-bold;
+    color: $lt-navy;
+    font-weight: normal;
+  }
+  .field-item {
+    display: inline;
+  }
+}
+
 .our-science {
-  background: url('../images/ourscience.jpg') 0 0 no-repeat;
-  @include landing-img;
+  @include landing-img(ourscience);
+}
+
+.about-us {
+  @include landing-img(aboutus);
 }
 
 h1, h2 {
@@ -184,10 +209,11 @@ h1, h2 {
 }
 
 .page-header {
-  @include header(0, -66px);
+  @include header(-10px, -66px);
   position: relative;
   z-index: 10;
-  padding: 20px 0 5px 0;
+  padding: 20px 0 5px 30px;
+  margin-top: 83px;
 }
 
 h1 {
@@ -244,9 +270,6 @@ h2 {
 }
 
 /* misc */
-.full-width {
-  width: 100%;
-}
 
 /* Phone */
 

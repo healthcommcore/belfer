@@ -72,6 +72,7 @@
  *
  * @ingroup themeable
  */
+$content_border = !drupal_is_front_page() ? 'gray-border' : '';
 ?>
 <header role="banner" class="white">
   <div class="container">
@@ -132,9 +133,9 @@
       
     <?php if (!empty($page['landing-hero'])): ?>
       <div class="landing-hero">
-        <div class="container">
+        <!--<div class="container">-->
           <?php print render($page['landing-hero']); ?>
-        </div>
+        <!--</div>-->
       </div>
     <?php endif; ?>
   </div>
@@ -153,13 +154,19 @@
 
   <?php if( !drupal_is_front_page()) : ?>
     <?php if (!empty($title)): ?>
+    <div class="row">
       <h1 class="page-header"><?php print $title; ?></h1>
+    </div>
     <?php endif; ?>
   <?php endif; ?>
   <div class="row">
 
+<!--
+-->
+  <div class="col-md-12">
+  <div class="row white <?php echo $content_border; ?>">
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-md-3" role="complementary">
+      <aside class="col-md-3 hidden-sm hidden-xs" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
@@ -192,14 +199,18 @@
 						</div>
 					<?php endif; ?>
     </section>
+<!--
+-->
 
     <?php if (!empty($page['sidebar_second'])): ?>
       <aside class="col-md-3" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
-				</div>
+    </div>
+    </div>
 
+  </div>
   </div>
 </div>
 </div>
