@@ -121,16 +121,20 @@
   </div>
 
 <?php if (!empty($page['home-hero']) || !empty($page['landing-hero']) ): ?>
-  <div class="container">
+  <div class="white">
     <?php if (!empty($page['home-hero'])): ?>
       <div class="home-hero">
-        <?php print render($page['home-hero']); ?>
+        <div class="container">
+          <?php print render($page['home-hero']); ?>
+        </div>
       </div>
     <?php endif; ?>
       
     <?php if (!empty($page['landing-hero'])): ?>
       <div class="landing-hero">
-        <?php print render($page['landing-hero']); ?>
+        <div class="container">
+          <?php print render($page['landing-hero']); ?>
+        </div>
       </div>
     <?php endif; ?>
   </div>
@@ -149,7 +153,7 @@
 
   <?php if( !drupal_is_front_page()) : ?>
     <?php if (!empty($title)): ?>
-      <h1><?php print $title; ?></h1>
+      <h1 class="page-header"><?php print $title; ?></h1>
     <?php endif; ?>
   <?php endif; ?>
   <div class="row">
