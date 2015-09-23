@@ -204,6 +204,18 @@ header {
   @include landing-img(aboutus);
 }
 
+.alliances {
+  @include landing-img(alliances);
+}
+
+.in-the-news {
+  @include landing-img(inthenews);
+}
+
+.support {
+  @include landing-img(support);
+}
+
 h1, h2 {
   color: $red;
 }

@@ -18,12 +18,14 @@ function taxonomy_link_redirect_views_pre_render($view) {
   //dpm($view);
   $url = '/our-science';
   $page_ids = array();
-  foreach($view->result as $result) {
-    $node = node_load($result->nid);
-    $props = get_object_vars($node);
-    $fields = _taxonomy_link_redirect_distill_fields($props);
-    $terms = _taxonomy_link_redirect_all_terms($node, $fields);
-    dpm($terms);
+  if($view->name == 'our_science') {
+    foreach($view->result as $result) {
+      $node = node_load($result->nid);
+      $props = get_object_vars($node);
+      $fields = _taxonomy_link_redirect_distill_fields($props);
+      $terms = _taxonomy_link_redirect_all_terms($node, $fields);
+      //dpm($terms);
+    }
   }
 }
 
