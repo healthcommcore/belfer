@@ -80,6 +80,9 @@
  * @ingroup themeable
  */
 //dpm($content);
+if(isset($content['field_capabilities'])) {
+  $variables['attributes']['page_ids'] = array($content['field_capabilities']);
+}
 ?>
 <div id="node-<?php print $node->nid; ?>" class="<?php print $classes; ?> clearfix"<?php print $attributes; ?>>
 

@@ -6,6 +6,9 @@
  *
  * @ingroup views_templates
  */
+//$view = &views_get_current_view();
+//$node = node_load(9);
+//dpm($variables);
 ?>
 <?php if (!empty($title)): ?>
   <h3><?php print $title; ?></h3>
