@@ -22,23 +22,24 @@ function taxonomy_link_redirect_views_pre_render($view) {
     $node = node_load($result->nid);
     $props = get_object_vars($node);
     $fields = _taxonomy_link_redirect_distill_fields($props);
-    dpm($fields);
-    //$all_terms = _taxonomy_link_redirect_all_terms($node, $fields);
-
-    //$terms = taxonomy_node_get_terms($node);
-    //dpm($node);
-  /*
-    $fields = _taxonomy_link_redirect_distill_fields($props);
-    dpm($fields);
-    //dpm($props);
-    //$wrapper = entity_metadata_wrapper('node', $node);
-    //dpm($wrapper->getBundle());
-    //if(_taxonomy_link_redirect_is_science_field($node)
-   */
+    $terms = _taxonomy_link_redirect_all_terms($node, $fields);
+    dpm($terms);
   }
 }
 
 function _taxonomy_link_redirect_all_terms($node, $fields) {
+  $terms = array();
+  foreach($fields as $field) {
+    $vals = $node->$field;
+    $vals = $vals['und'];
+    foreach($vals as $val) {
+      $term = taxonomy_term_load($val['tid']);
+      if(!in_array($term->name, $terms)) {
+        $terms[] = $term->name;
+      }
+    }
+  }
+  return $terms;
 }
 /*
  */
@@ -51,29 +52,16 @@ function _taxonomy_link_redirect_distill_fields($fields) {
       }
     }
   }
-  //dpm(array_keys($fields));
-  /*
-  foreach($fields as $field) {
-    //if(is_array($field) && _taxonomy_link_redirect_is_science_field(key($field))) {
-    if(is_array($field) ) {
-      dpm(key($field));
-      //$results[] = _taxonomy_link_redirect_clean_field($field);
-    }
-  }
-  */
   return $results;
 }
 
 function _taxonomy_link_redirect_is_science_field($field) {
   $pattern = "/^field_/";
-  $title_field = 'field_title_tag';
-  /*
-  $to_filter = array(
-    'field_science_category',
-    'field_title_tag'
+  $junk = array(
+    'field_title_tag',
+    'field_science_category'
   );
-   */
-  return (preg_match($pattern, $field) === 1) && ($field != $title_field);
+  return (preg_match($pattern, $field) === 1) && (!in_array($field, $junk));
 }
 
 
