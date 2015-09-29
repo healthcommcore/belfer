@@ -75,13 +75,21 @@ header {
   .nav > li > a {
     padding-bottom: 6px;
   }
+  .nav > li > a:hover,
+  .nav > li > a.active,
+  .nav > li.active-trail a.active-trail,
+  .nav > li > a:focus {
+    background: none;
+    color: #D496A7;
+  }
+
 }
 
 .logo {
-  padding: 13px 0;
-  display: block;
+  padding: 10px 0;
+  display: inline-block;
   img {
-    margin-top: -28px;
+    margin-top: -27px;
   }
 }
 
@@ -112,8 +120,7 @@ header {
 .submenu {
   text-align: center;
   border-top: $dk-navy 8px solid;
-  margin-top: 40px;
-  margin-left: 20px;
+  margin: 45px 0 40px 20px;
   padding: 15px;
   background: $lt-blue;
   .nav > li a {
@@ -193,7 +200,7 @@ header {
 
 /* page content */
 .main-content-margin {
-  margin: 40px 60px 40px 20px;
+  margin: 60px 60px 60px 20px;
 }
 
 .gray-border {
@@ -248,6 +255,14 @@ header {
   @include landing-img(support);
 }
 
+.contact {
+  @include landing-img(contact);
+}
+
+.careers {
+  @include landing-img(careers);
+}
+
 h1, h2 {
   color: $red;
 }
@@ -269,6 +284,11 @@ h2 {
   font-family: $sspro-lt;
   font-size: 1.5em;
   border-bottom: $red 1px solid;
+}
+
+.landing-text {
+  font-size: 145%;
+  margin-bottom: 27px;
 }
 
 /* Footer */
