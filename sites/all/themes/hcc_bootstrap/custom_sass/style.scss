@@ -44,6 +44,14 @@ $neuton-reg: 'neutonregular';
   height: 282px;
 }
 
+@mixin blue-label {
+  text-transform: uppercase;
+  font-family: $sspro-bold;
+  color: $lt-navy;
+  font-weight: normal;
+}
+
+
 /* global styles*/
 body {
   background: $gray;
@@ -221,14 +229,39 @@ header {
   z-index: 0;
 }
 
+h1, h2 {
+  color: $red;
+}
+
+.page-header {
+  @include header(-10px, -66px);
+  position: relative;
+  z-index: 10;
+  padding: 20px 0 5px 30px;
+  margin-top: 83px;
+}
+
+h1 {
+  font-family: $sspro-reg;
+  font-size: 3.0em;
+}
+
+h2 {
+  font-family: $sspro-lt;
+  font-size: 1.5em;
+  border-bottom: $red 1px solid;
+}
+
+.landing-text {
+  font-size: 145%;
+  margin-bottom: 27px;
+}
+
 /* our science */
 .view-our-science {
   .field-label {
+    @include blue-label;
     font-size: 0.9em;
-    text-transform: uppercase;
-    font-family: $sspro-bold;
-    color: $lt-navy;
-    font-weight: normal;
   }
   .field-item {
     display: inline;
@@ -263,33 +296,38 @@ header {
   @include landing-img(careers);
 }
 
-h1, h2 {
-  color: $red;
+/* our people */
+.ui-accordion {
+  .views-row {
+    margin-bottom: 8px;
+  }
+  .ui-state-default a,
+  .ui-state-default a:link {
+    @include blue-label;
+    font-size: 1.4em;
+  }
+  .ui-state-active a,
+  .ui-state-hover a,
+  .ui-state-active a:link,
+  .ui-state-hover a:link {
+    color: #000;
+  }
+  .ui-state-default, 
+  .ui-widget-content .ui-state-default, 
+  .ui-widget-header .ui-state-default {
+    background: $exlt-blue;
+    border: $lt-blue 1px solid;
+  }
+  .ui-widget-content { 
+    border: $lt-blue 1px solid;
+  }
+  .ui-widget,
+  .ui-widget-content {
+    font-family: $sspro-lt;
+    color: #333;
+  }
 }
 
-.page-header {
-  @include header(-10px, -66px);
-  position: relative;
-  z-index: 10;
-  padding: 20px 0 5px 30px;
-  margin-top: 83px;
-}
-
-h1 {
-  font-family: $sspro-reg;
-  font-size: 3.0em;
-}
-
-h2 {
-  font-family: $sspro-lt;
-  font-size: 1.5em;
-  border-bottom: $red 1px solid;
-}
-
-.landing-text {
-  font-size: 145%;
-  margin-bottom: 27px;
-}
 
 /* Footer */
 
