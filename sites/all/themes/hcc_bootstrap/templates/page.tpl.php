@@ -203,7 +203,7 @@ $content_border = !drupal_is_front_page() ? 'gray-border' : '';
 -->
 
     <?php if (!empty($page['sidebar_second'])): ?>
-      <aside class="col-md-3" role="complementary">
+      <aside class="col-md-4" role="complementary">
         <?php print render($page['sidebar_second']); ?>
       </aside>  <!-- /#sidebar-second -->
     <?php endif; ?>
