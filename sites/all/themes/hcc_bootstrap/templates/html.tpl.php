@@ -93,5 +93,21 @@
 	}
 })(jQuery);
 </script>
+<script>
+(function($) {
+  $(document).ready(function() {
+    if($('.view-our-science').length > 0) {
+      $('.field-type-taxonomy-term-reference .field-item').each(function(){
+        //console.log($(this).text());
+        var with_comma = $(this).text() + ', ';
+        if(!$(this).is(':last-child')) {
+          $(this).text(with_comma);
+        }
+      });
+    }
+  });
+})(jQuery);
+</script>
+
 </body>
 </html>
