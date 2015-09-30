@@ -244,6 +244,15 @@ h1, h2 {
   margin-top: 83px;
 }
 
+.views-field-field-news-date,
+strong {
+  @include font(normal, 600);
+}
+
+em {
+  @include font(italic, 300);
+}
+
 h1 {
   @include font(normal, 400);
   font-size: 3.0em;
@@ -253,6 +262,7 @@ h2 {
   @include font(normal, 300);
   font-size: 1.5em;
   border-bottom: $red 1px solid;
+  line-height: 1.25em;
 }
 
 .landing-text {
@@ -303,6 +313,16 @@ h2 {
 .ui-accordion {
   .views-row {
     margin-bottom: 8px;
+    img {
+      float: left;
+      margin: 10px 15px 5px 0;
+    }
+  }
+  .views-field-field-title {
+    font-family: $neuton-lt;
+    line-height: 1.3em;
+    color: $med-blue;
+    font-size: 130%;
   }
   .ui-state-default a,
   .ui-state-default a:link {
