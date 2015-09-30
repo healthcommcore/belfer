@@ -16,15 +16,19 @@ $lt-blue: #CCE2F9;
 $med-blue: #7199C9;
 
 /* fonts */
-$sspro-reg: 'SourceSansProRegular';
-$sspro-bold: 'SourceSansProBold';
-$sspro-lt: 'SourceSansProLight';
-$sspro-exlt: 'SourceSansProExtraLight';
-$sspro-blk: 'SourceSansProBlack';
+$sspro: 'source-sans-pro';
 $neuton-lt: 'neutonlight';
 $neuton-reg: 'neutonregular';
+/*
+*/
 
 /* Mixins */
+
+@mixin font($style, $weight) {
+  font-family: $sspro;
+  font-style: $style;
+  font-weight: $weight;
+}
 
 @mixin menustyle {
 	float: left;
@@ -45,17 +49,16 @@ $neuton-reg: 'neutonregular';
 }
 
 @mixin blue-label {
+  @include font(normal, 700);
   text-transform: uppercase;
-  font-family: $sspro-bold;
   color: $lt-navy;
-  font-weight: normal;
 }
 
 
 /* global styles*/
 body {
   background: $gray;
-  font-family: $sspro-lt;
+  @include font(normal, 300);
 }
 
 .white {
@@ -111,9 +114,9 @@ header {
 }
 
 .navbar-nav > li > a {
+  @include font(normal, 200);
   color: #fff;
   font-size: 20px;
-  font-family: $sspro-exlt;
 }
 
 .nav > li > a:hover,
@@ -242,12 +245,12 @@ h1, h2 {
 }
 
 h1 {
-  font-family: $sspro-reg;
+  @include font(normal, 400);
   font-size: 3.0em;
 }
 
 h2 {
-  font-family: $sspro-lt;
+  @include font(normal, 300);
   font-size: 1.5em;
   border-bottom: $red 1px solid;
 }
@@ -323,7 +326,7 @@ h2 {
   }
   .ui-widget,
   .ui-widget-content {
-    font-family: $sspro-lt;
+    @include font(normal, 300);
     color: #333;
   }
 }

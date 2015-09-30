@@ -58,6 +58,8 @@
     <script src="<?php echo drupal_get_path('theme', 'hcc_bootstrap') . 'js/respond.min.js'; ?>"></script>
   <![endif]-->
   <?php print $scripts; ?>
+  <script src="https://use.typekit.net/wvk3mhe.js"></script>
+  <script>try{Typekit.load({ async: true });}catch(e){}</script>
 </head>
   <!--[if lt IE 9]>
     <body class="<?php print $classes . ' ieclass'; ?>" <?php print $attributes;?>>
