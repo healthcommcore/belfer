@@ -275,10 +275,20 @@ h2 {
   .field-label {
     @include blue-label;
     font-size: 0.9em;
+    span {
+      color: #333;
+      @include font(normal, 300);
+      text-transform: initial;
+      font-size: 1.1em;
+    }
   }
-  .field-item {
-    display: inline;
+  .field-name-body {
+    margin: 10px 0;
   }
+}
+
+.jumplink {
+  color: $med-blue;
 }
 
 .our-science {

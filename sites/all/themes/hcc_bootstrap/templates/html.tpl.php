@@ -94,16 +94,33 @@
 })(jQuery);
 </script>
 <script>
+/**
+* This is a really bad hack that I'm ashamed I'm even doing. It's just
+* for the sake of appearance in the Our science categories
+*/
 (function($) {
   $(document).ready(function() {
     if($('.view-our-science').length > 0) {
-      $('.field-type-taxonomy-term-reference .field-item').each(function(){
-        //console.log($(this).text());
-        var with_comma = $(this).text() + ', ';
-        if(!$(this).is(':last-child')) {
-          $(this).text(with_comma);
-        }
+      $('.field-type-taxonomy-term-reference').each(function(){
+        var insides = $(this).find('.field-item').remove();
+        var revised = stringify(insides);
+        $(this).find('.field-label').append('<span>' + revised + '</span>');
+        /*
+         */
+        
       });
+    }
+    function stringify(insides) {
+      var allText = '';
+      var total = insides.length;
+      $(insides).each(function(index) {
+        var withComma = $(this).text() + ', ';
+          if(index != total - 1) {
+            $(this).text(withComma);
+          }
+        allText += $(this).text();
+      });
+      return allText;
     }
   });
 })(jQuery);
