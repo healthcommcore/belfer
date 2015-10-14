@@ -1,3 +1,4 @@
+//@import '../bootstrap_sass/bootstrap.scss';
 @import 'fonts.scss';
 
 /* Styles */
@@ -195,6 +196,8 @@ header {
 }
 
 .carousel-caption {
+  display: inline-block;
+  bottom: 0;
   top: 0;
   left: 10%;
   right: 50%;
@@ -206,6 +209,13 @@ header {
   p {
     font-size: 1.4em;
     width: 60%;
+  }
+}
+
+.carousel-inner {
+  .home-3 {
+    left: 60%;
+    right: 5%;
   }
 }
 
@@ -272,19 +282,30 @@ h2 {
 
 /* our science */
 .view-our-science {
-  .field-label {
+  .views-label {
     @include blue-label;
     font-size: 0.9em;
+  }
+  .cross-links {
+    line-height: 1.32em;
+    margin-bottom: 12px;
+    a {
+      color: $med-blue;
+      font-family: $neuton-lt;
+      font-size: 1.1em;
+    }
+  }
+/*
     span {
       color: #333;
       @include font(normal, 300);
       text-transform: initial;
       font-size: 1.1em;
     }
-  }
   .field-name-body {
     margin: 10px 0;
   }
+*/
 }
 
 .jumplink {
@@ -365,7 +386,7 @@ h2 {
 /* Footer */
 
 .footer {
-  padding-bottom: 55px;
+  padding: 30px 0 55px 0;
   border-top: none;
   margin-top: 0;
 
@@ -405,6 +426,10 @@ h2 {
 }
 
 /* misc */
+
+.embed-responsive {
+  margin: 30px 0;
+}
 
 /* Phone */
 

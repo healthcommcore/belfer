@@ -82,7 +82,7 @@
 	var height = $(window).height();
 	var xPos = window.screenX + (window.outerWidth - width) / 2;
 	var yPos = window.screenY + (window.outerHeight - height) / 2;;
-	var options = "scrollbars=yes|no|1|0,resizable=yes,menubar=yes,toolbar=yes,status=yes,location=yes," + 
+	var options = "scrollbars,resizable,menubar,toolbar,status=0,location," + 
 		"height=" + height + ",width=" + width + 
 		",top=" + yPos + ",left=" + xPos;
 	for(var i = 0; i < extLinks.length; i++){
@@ -93,38 +93,5 @@
 	}
 })(jQuery);
 </script>
-<script>
-/**
-* This is a really bad hack that I'm ashamed I'm even doing. It's just
-* for the sake of appearance in the Our science categories
-*/
-(function($) {
-  $(document).ready(function() {
-    if($('.view-our-science').length > 0) {
-      $('.field-type-taxonomy-term-reference').each(function(){
-        var insides = $(this).find('.field-item').remove();
-        var revised = stringify(insides);
-        $(this).find('.field-label').append('<span>' + revised + '</span>');
-        /*
-         */
-        
-      });
-    }
-    function stringify(insides) {
-      var allText = '';
-      var total = insides.length;
-      $(insides).each(function(index) {
-        var withComma = $(this).text() + ', ';
-          if(index != total - 1) {
-            $(this).text(withComma);
-          }
-        allText += $(this).text();
-      });
-      return allText;
-    }
-  });
-})(jQuery);
-</script>
-
 </body>
 </html>
