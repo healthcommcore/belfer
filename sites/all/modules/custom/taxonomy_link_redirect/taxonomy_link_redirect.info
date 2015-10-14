@@ -1,4 +1,0 @@
-name = Taxonomy link redirect
-description = Means to override taxonomy links specifically for the Belfore Institute website
-core = 7.x
-version = 1.0
