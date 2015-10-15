@@ -52,14 +52,14 @@
   <?php print $head; ?>
   <title><?php print $head_title; ?></title>
   <?php print $styles; ?>
+  <!-- HTML5 element support for IE6-8 -->
+  <!--[if lt IE 9]>
+    <script src="<?php echo drupal_get_path('theme', 'hcc_bootstrap') . '/js/html5shiv.min.js'; ?>"></script>
+    <script src="<?php echo drupal_get_path('theme', 'hcc_bootstrap') . '/js/respond.min.js'; ?>"></script>
+  <![endif]-->
   <?php print $scripts; ?>
   <script src="https://use.typekit.net/jci8jtl.js"></script>
   <script>try{Typekit.load({ async: true });}catch(e){}</script>
-  <!-- HTML5 element support for IE6-8 -->
-  <!--<script src="<?php //echo drupal_get_path('theme', 'hcc_bootstrap') . '/js/respond.min.js'; ?>"></script>-->
-  <!--[if lt IE 9]>
-    <script src="<?php echo drupal_get_path('theme', 'hcc_bootstrap') . '/js/html5shiv.min.js'; ?>"></script>
-  <![endif]-->
 </head>
   <!--[if lt IE 9]>
     <body class="<?php print $classes . ' ieclass'; ?>" <?php print $attributes;?>>
