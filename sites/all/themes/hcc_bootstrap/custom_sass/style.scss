@@ -425,6 +425,20 @@ h2 {
 	}
 }
 
+/* IE8 */
+
+.ieclass {
+  .carousel-caption {
+    left: 10%;
+    right: 55%;
+  }
+  .carousel-inner {
+    .home-3 {
+      left: 60%;
+      right: 10%;
+    }
+  }
+}
 /* misc */
 
 .embed-responsive {
