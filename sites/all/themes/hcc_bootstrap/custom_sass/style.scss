@@ -428,6 +428,24 @@ h2 {
 /* IE8 */
 
 .ieclass {
+  .landing-hero img {
+    background-position: center center;
+    background-color: $exlt-blue;
+  }
+  .footer .col-md-4 {
+    margin-top: 0;
+  }
+  .col-md-8,
+  .col-md-4 {
+    float: left;
+  }
+  .col-md-8 {
+    width: 60%; 
+  }
+  .col-md-4 {
+    width: 30%;
+    margin-top: -60px;
+  }
   .carousel-caption {
     left: 10%;
     right: 55%;
