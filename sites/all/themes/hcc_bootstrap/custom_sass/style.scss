@@ -1,4 +1,4 @@
-@import '../bootstrap_sass/bootstrap.scss';
+//@import '../bootstrap_sass/bootstrap.scss';
 @import 'fonts.scss';
 
 /* Styles */
@@ -129,6 +129,10 @@ header {
 }
 
 /* side nav */
+aside {
+  z-index: 40;
+}
+
 .submenu {
   text-align: center;
   border-top: $dk-navy 8px solid;
@@ -463,9 +467,106 @@ h2 {
   margin: 30px 0;
 }
 
+/* Tablet landscape ONLY*/
+@media (max-width: 1199px) and (min-width: 992px) {
+  .carousel-caption {
+    h1 {
+      font-size: 2.5em;
+    }
+    p {
+      font-size: 1.25em;
+    }
+  }
+}
+
+/* Tablet portrait ONLY */
+@media (max-width: 991px) and (min-width: 768px) {
+  .carousel-caption {
+    padding: 10px;
+    left: 5%;
+    h1 {
+      font-size: 2.0em;
+    }
+    p {
+      font-size: 1.0em;
+    }
+  }
+
+  .carousel-inner {
+    .home-3 {
+      left: 60%;
+      right: 2%;
+    }
+  }
+}
+
+/* Tablet portrait */
+@media (max-width: 991px) {
+  /* main menu */
+  .navbar-nav > li > a {
+    font-size: 17px;
+  }
+
+  /* top menu */
+  .top-menu {
+    font-size: 13px;
+    .nav > li > a {
+      padding-left: 10px;
+      padding-right: 10px;
+    }
+  }
+
+  
+
+  .home-mission {
+    p {
+      font-size: 1.9em;
+      line-height: 1.4em;
+    }
+  }
+
+  .home-text {
+    font-size: 1.15em;
+  }
+
+  .home-news {
+    margin-bottom: 40px;
+  }
+
+  .main-content-margin {
+    margin: 40px 20px 60px 20px;
+  }
+
+  .submenu {
+    margin: 30px 30px 20px 20px;
+    .nav > li a {
+      font-size: 1.35em;
+    }
+  }
+
+  .landing-text {
+    font-size: 130%;
+    margin-bottom: 27px;
+  }
+
+  .view-our-people {
+    margin-top: 130px;
+  }
+}
+
+
 /* Phone */
 
 @media (max-width: 767px) {
+
+  .home-hero .container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .carousel-caption {
+    display: none;
+  }
 
 .footer-logos {
     a {

@@ -94,7 +94,7 @@ $content_border = !drupal_is_front_page() ? 'gray-border' : '';
     </div>
   </div>
 </header>
-    <div class="navbar-header">
+    <div class="navbar-header navbar-color">
       <!-- .btn-navbar is used as the toggle for collapsed navbar content -->
       <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
         <span class="sr-only">Toggle navigation</span>
@@ -166,7 +166,7 @@ $content_border = !drupal_is_front_page() ? 'gray-border' : '';
   <div class="col-md-12">
   <div class="row white <?php echo $content_border; ?>">
     <?php if (!empty($page['sidebar_first'])): ?>
-      <aside class="col-md-3 hidden-sm hidden-xs" role="complementary">
+      <aside class="col-md-3 col-sm-4 hidden-xs" role="complementary">
         <?php print render($page['sidebar_first']); ?>
       </aside>  <!-- /#sidebar-first -->
     <?php endif; ?>
