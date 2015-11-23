@@ -71,11 +71,14 @@ header {
   border-top: $red 15px solid;
 }
 
+.top-menu.hidden-xs {
+  display: inline-block !important;
+}
+
 .top-menu {
   padding: 0 15px;
   margin-top: -13px;
   background: $red;
-  display: inline-block;
   border-bottom-right-radius: 14px;
   border-bottom-left-radius: 14px;
   li {
@@ -636,6 +639,10 @@ h2 {
       color: $med-blue;
       background: none;
     }
+  }
+
+  .top-menu.hidden-xs {
+    display: none !important;
   }
 
   .home-news {
