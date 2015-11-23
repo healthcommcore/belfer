@@ -467,6 +467,17 @@ h2 {
   margin: 30px 0;
 }
 
+@media (min-width: 401px) {
+  .hidden-phone {
+    display: block !important;
+  }
+  .visible-phone {
+    display: none !important;
+  }
+}
+
+
+
 /* Tablet landscape ONLY*/
 @media (max-width: 1199px) and (min-width: 992px) {
   .carousel-caption {
@@ -480,7 +491,12 @@ h2 {
 }
 
 /* Tablet portrait ONLY */
-@media (max-width: 991px) and (min-width: 768px) {
+@media (max-width: 991px) and (min-width: 401px) {
+  
+}
+
+/* Tablet portrait */
+@media (max-width: 991px) {
   .carousel-caption {
     padding: 10px;
     left: 5%;
@@ -498,10 +514,6 @@ h2 {
       right: 2%;
     }
   }
-}
-
-/* Tablet portrait */
-@media (max-width: 991px) {
   /* main menu */
   .navbar-nav > li > a {
     font-size: 17px;
@@ -559,16 +571,128 @@ h2 {
 
 @media (max-width: 767px) {
 
-  .home-hero .container {
+  .main-container,
+  .footer {
+    overflow: hidden;
+  }
+
+  .col-md-12 .col-sm-12 {
+  }
+
+  .page-header {
+    padding-left: 20px;
+    font-size: 2.1em;
+    margin-bottom: 8px;
+  }
+
+  h2 {
+    font-size: 1.23em;
+    line-height: 1.15;
+  }
+
+  .main-content-margin {
+    margin-top: 25px;
+  }
+
+  .gray-border {
+    border: none;
+  }
+
+  .navbar-collapse {
+    max-height: 100%;
+  }
+
+  .navbar-color {
+    border-bottom: $lt-navy 2px solid;
+  }
+
+  .navbar-toggle {
+    margin-top: 3px;
+    margin-bottom: 3px;
+    .icon-bar {
+      background: #fff;
+    }
+  }
+
+  .dropdown-menu {
+    display: block;
+    position: relative;
+    float: none;
+    background: none;
+    box-shadow: none;
+    border: none;
+  }
+
+  .dropdown-menu > li > a {
+    color: #fff;
+    padding: 9px 0 9px 33px;
+  }
+
+  .nav {
+    .dropdown-menu > li > a.active,
+    .dropdown-menu > li.active-trail > a,
+    .dropdown-menu > li > a:hover,
+    .dropdown-menu > li > a:focus {
+      color: $med-blue;
+      background: none;
+    }
+  }
+
+  .home-news {
+    .views-field-field-news-link {
+      padding-left: 20px;
+      padding-right: 20px;
+    }
+    .date-display-single {
+      padding-left: 20px;
+    }
+  }
+
+  .home-hero .container,
+  .col-md-12 {
     padding-left: 0;
     padding-right: 0;
   }
 
-  .carousel-caption {
-    display: none;
+  .carousel-caption h1 {
+    background: none;
   }
 
-.footer-logos {
+  .home-mission h2,
+  .home-news h2, .page-header {
+    background-image: none;
+    background-color: $red;
+  }
+
+  .home-mission {
+    h2 {
+      text-align: left;
+      padding: 14px 0 3px 20px;
+      margin-bottom: 0;
+    }
+    p {
+      font-size: 1.6em;
+      line-height: 1.3em;
+      padding: 20px;
+    }
+  }
+
+  .home-text {
+    font-size: 1.05em;
+  }
+
+  .our-science, .alliances,
+  .in-the-news, .about-us,
+  .support, .contact, 
+  .careers, .landing-hero {
+    height: 135px;
+  }
+
+  .landing-text {
+    font-size: 120%;
+  }
+
+  .footer-logos {
     a {
       //display: inline-block;
     }
@@ -578,6 +702,25 @@ h2 {
     }
   }
 
+  .view-our-science {
+    .views-label {
+      font-size: 0.82em;
+    }
+    .cross-links {
+      line-height: 1.1em;
+      a {
+        font-size: 1.05em;
+      }
+    }
+  }
+
+  .view-our-people {
+    margin-top: 20px;
+  }
+
+  .ui-accordion .ui-accordion-content {
+    padding: 15px 25px;
+  }
   .footer-legal {
     text-align: center;
     margin-top: 15px;
@@ -593,3 +736,35 @@ h2 {
     }
   }
 }
+
+@media (max-width: 400px) {
+
+  .hidden-phone {
+    display: none !important;
+  }
+  .visible-phone {
+    display: block !important;
+  }
+
+  .carousel-caption {
+    top: -17px;
+    padding: 10px;
+    right: 20%;
+    h1 {
+      width: 80%;
+      font-size: 1.65em;
+    }
+    p {
+      width: 100%;
+      font-size: 0.9em;
+    }
+  }
+
+  .carousel-inner {
+    .home-3 {
+      left: 5%;
+      right: 20%;
+    }
+  }
+
+  }

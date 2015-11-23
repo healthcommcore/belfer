@@ -78,14 +78,15 @@ $content_border = !drupal_is_front_page() ? 'gray-border' : '';
   <div class="container">
 		<div class="header-logo row">
       <?php if ($logo): ?>
-        <div class="col-xs-9">
+        <div class="col-sm-9 col-xs-8">
           <a class="logo navbar-btn" href="<?php print $front_page; ?>" title="<?php print t('Home'); ?>">
-            <img class="img-responsive" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            <img class="img-responsive hidden-xs" src="<?php print $logo; ?>" alt="<?php print t('Home'); ?>" />
+            <img class="img-responsive visible-xs" src="<?php print $base_path . 'sites/default/files/logo_mobile.png'; ?>" alt="<?php print t('Home'); ?>" />
           </a>
         </div>
       <?php endif; ?>
       <?php if ( !empty($page['header-left']) ): ?>
-        <div class="col-xs-3">	
+        <div class="col-sm-3 col-xs-4">	
           <div class="header-left">
             <?php print render($page['header-left']); ?>
           </div>
