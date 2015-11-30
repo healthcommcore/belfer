@@ -1,4 +1,4 @@
-//@import '../bootstrap_sass/bootstrap.scss';
+@import '../bootstrap_sass/bootstrap.scss';
 @import 'fonts.scss';
 
 /* Styles */
@@ -725,8 +725,14 @@ h2 {
     margin-top: 20px;
   }
 
-  .ui-accordion .ui-accordion-content {
-    padding: 15px 25px;
+  .ui-accordion {
+    .ui-accordion-content {
+      padding: 15px 25px;
+    }
+    .views-row img {
+      float: none;
+      display: block;
+    }
   }
   .footer-legal {
     text-align: center;
